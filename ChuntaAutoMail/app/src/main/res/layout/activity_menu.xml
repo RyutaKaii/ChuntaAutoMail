@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.chunta.chuntaautomail.MenuActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f8ff" >
+
+            <TextView
+                android:id="@+id/textViewLabelOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="ON / OFF:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewOnOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:background="@drawable/textview_style"
+                android:text="ON" />
+
+            <Space
+                android:layout_width="30px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewLabelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Time : " />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="yyyy/MM/dd hh:mm" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f8ff" >
+
+            <TextView
+                android:id="@+id/textViewLabelSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f8ff"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botton_style"
+                android:layout_margin="20px"
+                android:text="Edit" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#008b8b">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffe0">
+
+            <TextView
+                android:id="@+id/textViewLabelOnOff2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="ON / OFF:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewOnOff2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:background="@drawable/textview_style"
+                android:text="ON" />
+
+            <Space
+                android:layout_width="30px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewLabelTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Time : " />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="yyyy/MM/dd hh:mm" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffe0">
+
+            <TextView
+                android:id="@+id/textViewLabelSubject2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewSubject2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffe0"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonEdit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botton_style"
+                android:layout_margin="20px"
+                android:text="Edit" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#008b8b">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f8ff">
+
+            <TextView
+                android:id="@+id/textViewLabelOnOff3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="ON / OFF:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewOnOff3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:background="@drawable/textview_style"
+                android:text="ON" />
+
+            <Space
+                android:layout_width="30px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewLabelTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Time : " />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="yyyy/MM/dd hh:mm" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f8ff">
+
+            <TextView
+                android:id="@+id/textViewLabelSubject3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e6e6fa"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject:" />
+
+            <Space
+                android:layout_width="10px"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewSubject3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:layout_margin="10px"
+                android:padding="10px"
+                android:text="Subject" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#f0f8ff">
+
+            <Button
+                android:id="@+id/buttonEdit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botton_style"
+                android:layout_margin="20px"
+                android:text="Edit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#008b8b">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10px" />
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.design.widget.CoordinatorLayout>
