@@ -14,5 +14,5 @@ public class Const {
     public static final String EMAIL_PORT_GOOGLE = "465";
 
     /** preference登録名 */
-    public static final String PREFERENCE_NAME = "PRE_CHUNTA_AUTOMAIL";
+    public static final String PREFERENCE_NAME = "PRE_CHUNTA_AUTOMAIL_v1.2";
 }

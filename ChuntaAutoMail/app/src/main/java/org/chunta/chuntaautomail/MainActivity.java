@@ -183,7 +183,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setInputParam();
-                new Alerm().setAlerm(userData);
+
+                Alerm alerm = new Alerm();
+
+                if (userData.getIsSet()) {
+                    // 前回設定したアラームを削除して再設定する
+                    alerm.canselAlerm(userData);
+                    alerm.setAlerm(userData);
+                } else {
+                    // 前回設定したアラームを削除する
+                    alerm.canselAlerm(userData);
+                }
 
                 // SharedPreferencesに値を登録
                 userDataList.getUserDataList().set(selectedNo, userData);

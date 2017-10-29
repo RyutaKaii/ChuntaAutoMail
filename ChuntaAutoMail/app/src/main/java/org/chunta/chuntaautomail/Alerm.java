@@ -36,6 +36,21 @@ public class Alerm {
     }
 
     /**
+     * アラームをキャンセルする.<br />
+     * リクエストコードによってintentを区別する
+     */
+    public void canselAlerm(UserData userData) {
+        Intent it = new Intent(MainActivity.getInstance().getApplicationContext(), TaskService.class);
+        it.putExtra("userData", userData);
+
+        PendingIntent pendingIntent = PendingIntent.getService(MainActivity.getInstance().getApplicationContext(), userData.getNo(), it, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager manager = (AlarmManager) MainActivity.getInstance().getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+
+        manager.cancel(pendingIntent);
+        pendingIntent.cancel();
+    }
+
+    /**
      * 起動時間を取得.
      */
     private Calendar getGetupTime(UserData userData) {

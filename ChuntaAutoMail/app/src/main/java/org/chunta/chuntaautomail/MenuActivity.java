@@ -60,6 +60,7 @@ public class MenuActivity extends Activity {
         }
 
         setEditOnClickListener();
+        setDescribeOnClickListener();
 
         setViewList(userDataList);
     }
@@ -158,6 +159,20 @@ public class MenuActivity extends Activity {
             public void onClick(View v) {
                 setPreferenceManager(ALERM_INDEX_THERD);
                 startActivity(new Intent(MenuActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    /**
+     * HowToUseボタン押下時の処理を登録.
+     */
+    private void setDescribeOnClickListener() {
+        Button buttonDescribe = (Button) findViewById(R.id.buttonDescribe);
+
+        buttonDescribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, DescribeActivity.class));
             }
         });
     }

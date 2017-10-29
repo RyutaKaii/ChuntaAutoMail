@@ -42,11 +42,6 @@ public class Mail extends AppCompatActivity {
         final String subject = userData.getStrSubject();
 
         try {
-//            // email と password更新
-//            SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(MainActivity.getInstance().getApplicationContext());
-//            sp.edit().putString("email", email).commit();
-//            sp.edit().putString("password", password).commit();
-
             // メール送信用パラメータ設定
             final Properties property = new Properties();
             property.put("mail.smtp.host", Const.EMAIL_HOST_GOOGLE);

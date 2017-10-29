@@ -44,6 +44,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <TextView
+                        android:id="@+id/textViewOnoffDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10px"
+                        android:background="#f0e68c"
+                        android:textSize="8dp"
+                        android:text="OFFにしていれば起動しません。" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                     <android.inputmethodservice.ExtractEditText
                         android:id="@+id/editTextYyyymmdd"
                         android:layout_width="fill_parent"
@@ -72,6 +87,21 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="時刻を入力" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewHhmmDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10px"
+                        android:background="#f0e68c"
+                        android:textSize="8dp"
+                        android:text="送信する日付と時刻を入力してください。" />
+
                 </TableRow>
 
                 <TableRow
@@ -127,7 +157,7 @@
                         android:layout_height="wrap_content"
                         android:padding="10px"
                         android:background="#e6e6fa"
-                        android:text="Pass" />
+                        android:text="PassWord" />
 
                     <EditText
                         android:id="@+id/editTextPass"
@@ -136,6 +166,21 @@
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:text="" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewPassDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10px"
+                        android:background="#f0e68c"
+                        android:textSize="8dp"
+                        android:text="gmailアカウントのパスワードを入力してください。" />
+
                 </TableRow>
 
                 <TableRow
