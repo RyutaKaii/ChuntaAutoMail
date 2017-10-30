@@ -12,14 +12,33 @@ import java.util.Calendar;
  * アラームクラス.
  */
 public class Alerm {
+    /** シングルトンのAlermインスタンス. */
+    private static Alerm alerm = new Alerm();
+
+    /**
+     * シングルトンのためのprivateコンストラクタ.
+     */
+    private Alerm() {
+    }
+
+    /**
+     * インスタンス取得.
+     * @return インスタンス
+     */
+    public static Alerm getInstanse() {
+        return alerm;
+    }
+
     /**
      * アラームをセットする.<br />
      * リクエストコードによってintentを区別する
      */
-    public void setAlerm(UserData userData) {
-        Intent it = new Intent(MainActivity.getInstance().getApplicationContext(), TaskService.class);
-        it.putExtra("userData", userData);
-        PendingIntent pendingIntent = PendingIntent.getService(MainActivity.getInstance().getApplicationContext(), userData.getNo(), it, PendingIntent.FLAG_CANCEL_CURRENT);
+    public void setAlerm(UserData userData, Intent intent) {
+        // service側でintentを利用するためにuserDataを挿入
+        intent.putExtra("userData", userData);
+
+        // 第2引数にNoを指定することでintentを区別する
+        PendingIntent pendingIntent = PendingIntent.getService(MainActivity.getInstance().getApplicationContext(), userData.getNo(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager manager = (AlarmManager) MainActivity.getInstance().getApplicationContext().getSystemService(Context.ALARM_SERVICE);
 
@@ -39,11 +58,8 @@ public class Alerm {
      * アラームをキャンセルする.<br />
      * リクエストコードによってintentを区別する
      */
-    public void canselAlerm(UserData userData) {
-        Intent it = new Intent(MainActivity.getInstance().getApplicationContext(), TaskService.class);
-        it.putExtra("userData", userData);
-
-        PendingIntent pendingIntent = PendingIntent.getService(MainActivity.getInstance().getApplicationContext(), userData.getNo(), it, PendingIntent.FLAG_CANCEL_CURRENT);
+    public void canselAlerm(UserData userData, Intent intent) {
+        PendingIntent pendingIntent = PendingIntent.getService(MainActivity.getInstance().getApplicationContext(), userData.getNo(), intent, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager manager = (AlarmManager) MainActivity.getInstance().getApplicationContext().getSystemService(Context.ALARM_SERVICE);
 
         manager.cancel(pendingIntent);

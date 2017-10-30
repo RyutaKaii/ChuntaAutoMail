@@ -2,6 +2,7 @@ package org.chunta.chuntaautomail;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -31,14 +32,16 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
     /** singleton instance. */
     private static MainActivity sInstance;
-    /** UserDataリスト */
+    /** UserDataリスト. */
     private UserDataList userDataList;
-    /** selectedNo */
+    /** selectedNo. */
     int selectedNo;
     /** UserData. */
     private UserData userData;
-    /** PreferenceManager */
+    /** PreferenceManager. */
     private PreferenceManager preferenceManager;
+    /** intent. */
+    private Intent intent;
 
     // 日付設定ダイアログのインスタンスを格納する変数
     private DatePickerDialog.OnDateSetListener varDateSetListener;
@@ -90,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
         setHhmmOnClickListener();
         setSaveOnClickListener();
         setCancelOnClickListener();
+
+        // intentのインスタンスを取得
+        // 既に生成済みの場合は生成しない
+        if (intent == null) {
+            intent = new Intent(getApplicationContext(), TaskService.class);
+        }
 
         setView(userData);
     }
@@ -184,16 +193,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 setInputParam();
 
-                Alerm alerm = new Alerm();
+                Alerm alerm = Alerm.getInstanse();
 
-                if (userData.getIsSet()) {
-                    // 前回設定したアラームを削除して再設定する
-                    alerm.canselAlerm(userData);
-                    alerm.setAlerm(userData);
-                } else {
-                    // 前回設定したアラームを削除する
-                    alerm.canselAlerm(userData);
-                }
+                // 前回設定したアラームを削除して再設定する
+                alerm.canselAlerm(userData, intent);
+                alerm.setAlerm(userData, intent);
 
                 // SharedPreferencesに値を登録
                 userDataList.getUserDataList().set(selectedNo, userData);

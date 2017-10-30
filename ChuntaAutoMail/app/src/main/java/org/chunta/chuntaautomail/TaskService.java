@@ -25,6 +25,12 @@ public class TaskService extends Service {
             new Mail().sendMail(userData);
         }
 
-        return Service.START_REDELIVER_INTENT;
+        return Service.START_NOT_STICKY;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        stopSelf();
     }
 }
